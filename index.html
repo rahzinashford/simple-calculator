@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell" aria-labelledby="calculator-title">
+    <section class="calculator-card">
+      <div class="calculator-header">
+        <p class="eyebrow">Quick math tool</p>
+        <h1 id="calculator-title">Simple Calculator</h1>
+        <p class="intro">Enter two numbers, choose an operation, and get an instant answer.</p>
+      </div>
+
+      <form id="calculator-form" class="calculator-form" novalidate>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="first-number">First number</label>
+            <input type="number" id="first-number" name="first-number" placeholder="Enter first number" step="any" inputmode="decimal" aria-describedby="error-message">
+          </div>
+
+          <div class="input-group">
+            <label for="second-number">Second number</label>
+            <input type="number" id="second-number" name="second-number" placeholder="Enter second number" step="any" inputmode="decimal" aria-describedby="error-message">
+          </div>
+        </div>
+
+        <div class="button-grid" aria-label="Calculator operations">
+          <button class="operation-button add" type="button" data-operation="add" aria-label="Add numbers">
+            <span aria-hidden="true">+</span>
+            Add
+          </button>
+          <button class="operation-button subtract" type="button" data-operation="subtract" aria-label="Subtract numbers">
+            <span aria-hidden="true">−</span>
+            Subtract
+          </button>
+          <button class="operation-button multiply" type="button" data-operation="multiply" aria-label="Multiply numbers">
+            <span aria-hidden="true">×</span>
+            Multiply
+          </button>
+          <button class="operation-button divide" type="button" data-operation="divide" aria-label="Divide numbers">
+            <span aria-hidden="true">÷</span>
+            Divide
+          </button>
+        </div>
+
+        <button class="clear-button" type="button" id="clear-button">Clear all</button>
+      </form>
+
+      <section class="result-card" aria-live="polite" aria-atomic="true">
+        <p id="error-message" class="error-message"></p>
+        <p class="result-label">Result</p>
+        <p id="result" class="result">—</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
